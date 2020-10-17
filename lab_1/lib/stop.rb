@@ -17,6 +17,6 @@ class Stop
   end
 
   def to_s
-    "#{@station} (#{arrival_time})"
+    "#{@station}(#{arrival_time})"
   end
 end
