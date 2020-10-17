@@ -35,6 +35,8 @@ class Menu
       break if action == :exit
 
       show_rasp if action == :rasp
+
+      show_stops if action == :stops
     end
   end
 
@@ -46,6 +48,12 @@ class Menu
     end
     train.each_stop.with_index do |stop, index|
       puts "#{index + 1}: #{stop}"
+    end
+  end
+
+  def show_stops
+    @train_list.each_train_by_length do |train|
+      puts "Остановки: #{train.stop_count} Маршрут: #{train}"
     end
   end
 end
